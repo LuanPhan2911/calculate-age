@@ -2,16 +2,11 @@ import { Link } from "react-router-dom";
 function About() {
     return (
         <>
-            <main>
-                <h2>Who are we?</h2>
-                <p>
-                    That feels like an existential question, don't you
-                    think?
-                </p>
-            </main>
-            <nav>
-                <Link to="/">Home</Link>
-            </nav>
+            React super-basic calculator_age App.
+            <div>
+                <a href="https://github.com/LuanPhan2911/calculate-age">My github</a>
+            </div>
+
         </>
     );
 }
