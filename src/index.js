@@ -7,13 +7,17 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import store from './app/store';
 import { Provider } from 'react-redux';
+import IntlProviderWrapper from './containers/IntlProviderWrapper';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <App />
+        <IntlProviderWrapper>
+          <App />
+        </IntlProviderWrapper>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>

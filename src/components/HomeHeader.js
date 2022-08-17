@@ -3,18 +3,23 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import { path } from '../utils';
+import { menu, path } from '../utils';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeLanguage } from '../features/app/ChangeLanguageSlice';
+import { FormattedMessage } from 'react-intl';
 const HomeHeader = () => {
     const dispatch = useDispatch();
     return (
         <Navbar bg="light" variant="light">
             <Container>
                 <Nav className="me-auto">
-                    <Nav.Link as={Link} to={path.HOME}>Home</Nav.Link>
-                    <Nav.Link as={Link} to={path.COUNTDOWN}>Countdown</Nav.Link>
-                    <Nav.Link as={Link} to={path.ABOUT}>About</Nav.Link>
+                    <Nav.Link as={Link} to={path.HOME}>{<FormattedMessage id='menu.home' />}</Nav.Link>
+                    <Nav.Link as={Link} to={path.COUNTDOWN}>
+                        {<FormattedMessage id='menu.countdown' />}
+                    </Nav.Link>
+                    <Nav.Link as={Link} to={path.ABOUT}>
+                        {<FormattedMessage id='menu.about' />}
+                    </Nav.Link>
                 </Nav>
                 <div className='d-flex'>
                     <button
