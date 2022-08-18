@@ -14,7 +14,7 @@ import '@formatjs/intl-relativetimeformat/locale-data/vi';
 const IntlProviderWrapper = (props) => {
     const { children } = props;
     const messages = LanguageUtils.getFlattenedMessages();
-    const language = useSelector((state) => state.language.language);
+    const language = useSelector((state) => state.app.language);
 
     return (
         <IntlProvider locale={language}

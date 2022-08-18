@@ -12,3 +12,7 @@ export const language = {
     VI: 'vi',
     EN: 'en',
 }
+export const dateFormat = {
+    EN: 'MM/dd/yyyy',
+    VI: 'dd/MM/yyyy',
+}

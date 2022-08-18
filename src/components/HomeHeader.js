@@ -5,12 +5,17 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { menu, path } from '../utils';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeLanguage } from '../features/app/ChangeLanguageSlice';
+import { changeLanguage, changeMode } from '../features/app/AppSlice';
 import { FormattedMessage } from 'react-intl';
 const HomeHeader = () => {
+    const mode = useSelector((state) => state.app.mode);
     const dispatch = useDispatch();
     return (
-        <Navbar bg="light" variant="light">
+        <Navbar bg={
+            mode === 0 ? 'light' : 'dark'
+        } variant={
+            mode === 0 ? 'light' : 'dark'
+        }>
             <Container>
                 <Nav className="me-auto">
                     <Nav.Link as={Link} to={path.HOME}>{<FormattedMessage id='menu.home' />}</Nav.Link>
@@ -22,6 +27,22 @@ const HomeHeader = () => {
                     </Nav.Link>
                 </Nav>
                 <div className='d-flex'>
+                    {
+                        mode === 0 ?
+                            <button
+                                type="button"
+                                className="btn btn-dark"
+                                onClick={() => dispatch(changeMode(1))}
+                            >Dark Mode</button>
+                            :
+                            <button
+                                type="button"
+                                className="btn btn-light"
+                                onClick={() => dispatch(changeMode(0))}
+                            >Light Mode</button>
+
+                    }
+
                     <button
                         className='btn btn-success mx-2'
                         onClick={() => dispatch(changeLanguage('vi'))}>
@@ -29,7 +50,6 @@ const HomeHeader = () => {
                     </button>
                     <button className='btn btn-primary'
                         onClick={() => dispatch(changeLanguage('en'))}>
-
                         EN
                     </button>
                 </div>
