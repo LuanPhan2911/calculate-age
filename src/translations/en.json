@@ -2,6 +2,15 @@
     "menu": {
         "home": "Home",
         "countdown": "Countdown",
-        "about": "About"
+        "about": "About",
+        "welcome": " Welcome to Calculator Age",
+        "select-age": "Choose your birth date"
+    },
+    "calculator-age": {
+        "content": "You alive about ",
+        "content2": "Or You alive about ",
+        "year": " year",
+        "month": " month",
+        "day": " day"
     }
 }

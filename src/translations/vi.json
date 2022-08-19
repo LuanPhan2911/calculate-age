@@ -2,6 +2,15 @@
     "menu": {
         "home": "Nhà",
         "countdown": "Đếm ngược",
-        "about": "Về chúng tôi"
+        "about": "Về chúng tôi",
+        "welcome": "Chào mừng đến với công cụ tính toán tuổi",
+        "select-age": "Chọn ngày sinh của bạn"
+    },
+    "calculator-age": {
+        "content": "Bạn đã sống khoảng ",
+        "content2": "Hoặc là đã ",
+        "year": " năm",
+        "month": " tháng",
+        "day": " ngày"
     }
 }
