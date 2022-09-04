@@ -3,13 +3,24 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import { menu, path } from '../utils';
+import { path } from '../utils';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeLanguage, changeMode } from '../features/app/AppSlice';
 import { FormattedMessage } from 'react-intl';
 const HomeHeader = () => {
     const mode = useSelector((state) => state.app.mode);
     const dispatch = useDispatch();
+    const changeModeTheme = (theme) => {
+        if (theme === 0) {
+            document.getElementsByTagName('html')[0]
+                .setAttribute("data-theme", "light");
+        } else {
+            document.getElementsByTagName('html')[0]
+                .setAttribute("data-theme", "dark");
+        }
+
+        dispatch(changeMode(theme));
+    }
     return (
         <Navbar bg={
             mode === 0 ? 'light' : 'dark'
@@ -32,13 +43,13 @@ const HomeHeader = () => {
                             <button
                                 type="button"
                                 className="btn btn-dark"
-                                onClick={() => dispatch(changeMode(1))}
+                                onClick={() => changeModeTheme(1)}
                             >Dark Mode</button>
                             :
                             <button
                                 type="button"
                                 className="btn btn-light"
-                                onClick={() => dispatch(changeMode(0))}
+                                onClick={() => changeModeTheme(0)}
                             >Light Mode</button>
 
                     }

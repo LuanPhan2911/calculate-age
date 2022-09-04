@@ -12,5 +12,16 @@
         "year": " year",
         "month": " month",
         "day": " day"
+    },
+    "countdown": {
+        "header": "Welcome to Countdown",
+        "second": "second",
+        "minute": "minute",
+        "hour": "hour",
+        "select-time": "Select time",
+        "config": "Config",
+        "start": "Start",
+        "pause": "Pause",
+        "reset": "Reset"
     }
 }

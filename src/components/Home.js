@@ -6,6 +6,7 @@ import { dateFormat, language } from "../utils/constant";
 import { FormattedMessage } from 'react-intl';
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
+import './Home.scss';
 function Home() {
     // function usePrevious(value) {
     //     const ref = useRef();
@@ -48,11 +49,11 @@ function Home() {
     return (
 
         <div className="container">
-            <div className="card">
-                <div className="card-header">
+            <div className="home-container">
+                <div className="home-content-header">
                     <FormattedMessage id="menu.welcome" />
                 </div>
-                <div className="card-body">
+                <div className="home-content-body">
                     <div className="form-group">
                         <label><FormattedMessage id="menu.select-age" /></label>
                         <DatePicker

@@ -1,0 +1,15 @@
+.home-content-container {
+    position         : fixed;
+    top              : 50%;
+    left             : 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform        : translate(-50%, -50%);
+    min-width        : 1200px;
+}
+
+input {
+    background-color: transparent;
+    color           : var(--color);
+    outline         : none;
+    cursor          : pointer;
+}

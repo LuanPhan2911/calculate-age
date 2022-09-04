@@ -12,5 +12,16 @@
         "year": " năm",
         "month": " tháng",
         "day": " ngày"
+    },
+    "countdown": {
+        "header": "Chào mừng đến vói công cụ đếm ngược",
+        "second": "giây",
+        "minute": "phút",
+        "hour": "giờ",
+        "select-time": "Chọn thời gian",
+        "config": "Hiệu chỉnh",
+        "start": "Bắt đầu",
+        "pause": "Tạm dừng",
+        "reset": "Chạy lại"
     }
 }

@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 function About() {
     return (
         <>
-            React super-basic calculator_age App.
+            React App.
             <div>
-                <a href="https://github.com/LuanPhan2911/calculate-age">My github</a>
+                <a href="https://github.com/LuanPhan2911/calculate-age" target={"_blank"}>My github</a>
             </div>
 
         </>

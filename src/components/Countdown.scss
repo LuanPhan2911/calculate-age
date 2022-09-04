@@ -1,0 +1,43 @@
+.countdown-container {
+    .countdown-header {
+        font-size  : 35px;
+        font-weight: 600;
+    }
+
+    .countdown-body {
+        .time {
+            font-family   : 'Share Tech Mono', monospace;
+            text-align    : center;
+            color         : #daf6ff;
+            text-shadow   : 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+            letter-spacing: 0.05em;
+            font-size     : 80px;
+            padding       : 5px 0;
+        }
+
+        .select-time {
+
+            .select-time-input {
+                select {
+                    min-width : 60px;
+                    text-align: center;
+                    padding   : 0 20px;
+                }
+
+                padding: 20px 0;
+            }
+
+            .select-time-button {
+                button {
+                    min-width: 100px;
+                }
+            }
+
+            .config-time {
+                button {
+                    min-width: 100px;
+                }
+            }
+        }
+    }
+}
