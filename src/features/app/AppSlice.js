@@ -1,10 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
-
 export const AppSlice = createSlice({
     name: 'app',
     initialState: {
         language: 'vi',
-        mode: 0,
+        mode: 'light',
     },
     reducers: {
 

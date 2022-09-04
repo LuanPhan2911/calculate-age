@@ -1,29 +1,23 @@
 import { FormattedMessage } from "react-intl";
 import './Countdown.scss';
 import { useState, useEffect, useMemo } from "react";
+import sound from '../assets/sound/nu_cuoi_em_la_nang.mp3';
+import Sound from "../containers/Sound";
 const Countdown = () => {
+    //countdown 
     const [time, setTime] = useState(0);
     const [running, setRunning] = useState(false);
     const [hour, setHour] = useState(0);
     const [minute, setMinute] = useState(0);
     const [second, setSecond] = useState(0);
-    // const setSelectTimeInit = () => {
-    //     let obj = {};
-    //     let hour = [], minute = [], second = [];
-    //     for (let i = 0; i <= 24; i++) {
-    //         hour.push(i);
-    //     }
-    //     for (let i = 0; i <= 60; i++) {
-    //         minute.push(i);
-    //         second.push(i);
-    //     }
-    //     obj.hour = hour;
-    //     obj.minute = minute;
-    //     obj.second = second;
-    //     return obj;
-    // }
-    // const selectTime = useMemo(() => setSelectTimeInit(), []);
+
+
+    //sound effect
+    const [playingSound, setPlayingSound] = useState(false);
+
+
     useEffect(() => {
+
         if (running && time > 0) {
             let id = setInterval(() => {
                 setTime(time - 1);
@@ -32,7 +26,11 @@ const Countdown = () => {
             return () => {
                 clearInterval(id);
             }
+        } else if (time === 0 && running) {
+            setPlayingSound(true);
         }
+
+
         setAllTime(time);
 
     }, [time, running]);
@@ -52,53 +50,21 @@ const Countdown = () => {
         return (zero + num).slice(-digit);
     }
     const start = () => {
-        setRunning(true);
+        if (time > 0) {
+            setRunning(true);
+        }
+
     };
     const pause = () => setRunning(false);
-    const reset = () => setTime(0);
+    const reset = () => {
+        setTime(0);
+        setPlayingSound(false);
+    };
     const setInitTime = (time) => {
         setRunning(false);
         setTime(time);
     }
     // ?const onChangeInput = (event, name) => {
-    //     setRunning(false);
-    //     let hour = 0, minute = 0, second = 0;
-    //     switch (name) {
-    //         case "hour":
-    //             hour = +event.target.value;
-    //             setHour(hour);
-    //             break;
-    //         case "minute":
-    //             minute = +event.target.value;
-    //             setMinute(minute);
-    //             break;
-    //         case "second":
-    //             second = +event.target.value;
-    //             setSecond(second);
-    //             break;
-
-    //         default:
-    //             break;
-
-    //     }
-    // }
-    // const renderTimeSelect = (data, name) => {
-    //     return (
-    //         <select onChange={(event) => onChangeInput(event, name)}>
-    //             {
-    //                 data && data.length > 0 &&
-    //                 data.map((item, index) => {
-    //                     return (
-    //                         <option
-    //                             value={item}
-    //                             key={index}
-    //                         >{zeroPadding(item, 2)}</option>
-    //                     )
-    //                 })
-    //             }
-    //         </select>
-    //     );
-    // }
     return (
         <div className=" container">
             <div className="countdown-container">
@@ -111,15 +77,6 @@ const Countdown = () => {
                     </div>
                     <div className="select-time">
                         <h5><FormattedMessage id="countdown.select-time" /></h5>
-                        {/* <div className="select-time-input form-group">
-                            {renderTimeSelect(selectTime.hour, "hour")}
-                            :
-                            {renderTimeSelect(selectTime.minute, "minute")}
-                            :
-                            {renderTimeSelect(selectTime.second, "second")}
-
-
-                        </div> */}
                         <div className=" select-time-button">
                             <button onClick={() => setInitTime(30)}>
                                 30 <FormattedMessage id="countdown.second" />
@@ -163,6 +120,13 @@ const Countdown = () => {
                             >
                                 <FormattedMessage id="countdown.reset" />
                             </button>
+                        </div>
+                        <div className="sound-alert">
+                            <h5>Sounds Config</h5>
+                            <Sound
+                                sound={sound}
+                                playingSound={playingSound}
+                            />
                         </div>
                     </div>
                 </div>

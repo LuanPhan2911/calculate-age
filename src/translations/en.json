@@ -7,8 +7,8 @@
         "select-age": "Choose your birth date"
     },
     "calculator-age": {
-        "content": "You alive about ",
-        "content2": "Or You alive about ",
+        "content": "You live about ",
+        "content2": "Or You live about ",
         "year": " year",
         "month": " month",
         "day": " day"

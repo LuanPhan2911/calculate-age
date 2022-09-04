@@ -7,11 +7,21 @@ import { path } from '../utils';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeLanguage, changeMode } from '../features/app/AppSlice';
 import { FormattedMessage } from 'react-intl';
+import { useEffect } from 'react';
 const HomeHeader = () => {
     const mode = useSelector((state) => state.app.mode);
     const dispatch = useDispatch();
+    useEffect(() => {
+        if (mode === 'light') {
+            document.getElementsByTagName('html')[0]
+                .setAttribute("data-theme", "light");
+        } else {
+            document.getElementsByTagName('html')[0]
+                .setAttribute("data-theme", "dark");
+        }
+    }, [mode]);
     const changeModeTheme = (theme) => {
-        if (theme === 0) {
+        if (theme === 'light') {
             document.getElementsByTagName('html')[0]
                 .setAttribute("data-theme", "light");
         } else {
@@ -23,9 +33,9 @@ const HomeHeader = () => {
     }
     return (
         <Navbar bg={
-            mode === 0 ? 'light' : 'dark'
+            mode === 'light' ? 'light' : 'dark'
         } variant={
-            mode === 0 ? 'light' : 'dark'
+            mode === 'light' ? 'light' : 'dark'
         }>
             <Container>
                 <Nav className="me-auto">
@@ -39,17 +49,17 @@ const HomeHeader = () => {
                 </Nav>
                 <div className='d-flex'>
                     {
-                        mode === 0 ?
+                        mode === 'light' ?
                             <button
                                 type="button"
                                 className="btn btn-dark"
-                                onClick={() => changeModeTheme(1)}
+                                onClick={() => changeModeTheme('dark')}
                             >Dark Mode</button>
                             :
                             <button
                                 type="button"
                                 className="btn btn-light"
-                                onClick={() => changeModeTheme(0)}
+                                onClick={() => changeModeTheme('light')}
                             >Light Mode</button>
 
                     }
