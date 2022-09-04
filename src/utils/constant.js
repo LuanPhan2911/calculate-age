@@ -2,6 +2,7 @@ export const path = {
     HOME: '/',
     ABOUT: '/about',
     COUNTDOWN: '/countdown',
+    TODOLIST: '/todolist',
 }
 export const menu = {
     HOME: 'Home',

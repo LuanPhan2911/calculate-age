@@ -1,8 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from '../components/Home';
 import About from '../components/About';
-import Countdown from './Coundown';
+import Countdown from '../components/Coundown';
 import './HomeContent.scss';
+import TodoList from '../components/TodoList';
 
 const HomeContent = () => {
     return (
@@ -10,6 +11,7 @@ const HomeContent = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/countdown" element={<Countdown />} />
+                <Route path="/todolist" element={<TodoList />} />
                 <Route path="about" element={<About />} />
             </Routes>
         </div>

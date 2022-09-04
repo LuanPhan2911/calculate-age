@@ -2,6 +2,7 @@
     "menu": {
         "home": "Nhà",
         "countdown": "Đếm ngược",
+        "todolist": "Danh sách việc",
         "about": "Về chúng tôi",
         "welcome": "Chào mừng đến với công cụ tính toán tuổi",
         "select-age": "Chọn ngày sinh của bạn"
@@ -14,7 +15,7 @@
         "day": " ngày"
     },
     "countdown": {
-        "header": "Chào mừng đến vói công cụ đếm ngược",
+        "header": "Chào mừng đến với công cụ đếm ngược",
         "second": "giây",
         "minute": "phút",
         "hour": "giờ",

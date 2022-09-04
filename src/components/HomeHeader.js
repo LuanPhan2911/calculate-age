@@ -39,9 +39,14 @@ const HomeHeader = () => {
         }>
             <Container>
                 <Nav className="me-auto">
-                    <Nav.Link as={Link} to={path.HOME}>{<FormattedMessage id='menu.home' />}</Nav.Link>
+                    <Nav.Link as={Link} to={path.HOME}>
+                        {<FormattedMessage id='menu.home' />}
+                    </Nav.Link>
                     <Nav.Link as={Link} to={path.COUNTDOWN}>
                         {<FormattedMessage id='menu.countdown' />}
+                    </Nav.Link>
+                    <Nav.Link as={Link} to={path.TODOLIST}>
+                        {<FormattedMessage id='menu.todolist' />}
                     </Nav.Link>
                     <Nav.Link as={Link} to={path.ABOUT}>
                         {<FormattedMessage id='menu.about' />}

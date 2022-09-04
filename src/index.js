@@ -9,7 +9,7 @@ import store from './app/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 import { Provider } from 'react-redux';
-import IntlProviderWrapper from './containers/IntlProviderWrapper';
+import IntlProviderWrapper from './hoc/IntlProviderWrapper';
 
 let persistor = persistStore(store);
 const root = ReactDOM.createRoot(document.getElementById('root'));

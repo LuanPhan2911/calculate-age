@@ -1,7 +1,7 @@
 
 
 import HomeHeader from '../components/HomeHeader';
-import HomeContent from '../components/HomeContent';
+import HomeContent from '../routes/HomeContent';
 import '../assets/theme/dark.scss';
 import '../assets/theme/light.scss';
 import './App.scss';
