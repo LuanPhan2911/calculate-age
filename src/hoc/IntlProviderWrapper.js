@@ -1,6 +1,4 @@
 import { IntlProvider } from "react-intl";
-import messages_vi from '../translations/vi.json';
-import messages_en from '../translations/en.json';
 import { useSelector } from "react-redux";
 import LanguageUtils from "../utils/LanguageUtils";
 import '@formatjs/intl-pluralrules/polyfill';

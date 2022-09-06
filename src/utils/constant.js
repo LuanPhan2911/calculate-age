@@ -3,6 +3,9 @@ export const path = {
     ABOUT: '/about',
     COUNTDOWN: '/countdown',
     TODOLIST: '/todolist',
+    LOGIN: '/login',
+    REGISTER: '/register',
+    LOGOUT: '/logout',
 }
 export const menu = {
     HOME: 'Home',
@@ -16,4 +19,8 @@ export const language = {
 export const dateFormat = {
     EN: 'MM/dd/yyyy',
     VI: 'dd/MM/yyyy',
+}
+export const fake = {
+    "email": "luan@gmail.com",
+    "name": "luan"
 }

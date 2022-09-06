@@ -24,5 +24,23 @@
         "start": "Bắt đầu",
         "pause": "Tạm dừng",
         "reset": "Chạy lại"
+    },
+    "auth": {
+        "login": {
+            "header": "Đăng nhập",
+            "email": "Địa chỉ email",
+            "password": "Mật khẩu",
+            "remember": "Nhớ tài khoản",
+            "forgot-password": "Quên mật khẩu",
+            "not-member": "Chưa có tài khoản?"
+        },
+        "register": {
+            "header": "Đăng kí",
+            "email": "Địa chỉ email",
+            "name": "Tên đăng nhập",
+            "password": "Mật khẩu",
+            "remember": "Nhớ tài khoản",
+            "member": "Có tài khoản? "
+        }
     }
 }
