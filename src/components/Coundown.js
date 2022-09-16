@@ -1,8 +1,9 @@
 import { FormattedMessage } from "react-intl";
 import './Countdown.scss';
-import { useState, useEffect, useMemo } from "react";
-import sound from '../assets/sound/nu_cuoi_em_la_nang.mp3';
+import { useState, useEffect } from "react";
+import musicList from '../assets/sound';
 import Sound from "../containers/Sound";
+import MusicList from "./Sound/MusicList";
 const Countdown = () => {
     //countdown 
     const [time, setTime] = useState(0);
@@ -10,12 +11,11 @@ const Countdown = () => {
     const [hour, setHour] = useState(0);
     const [minute, setMinute] = useState(0);
     const [second, setSecond] = useState(0);
-
+    const [selectedSong, setSelectedSong] = useState({});
 
     //sound effect
     const [playingSound, setPlayingSound] = useState(false);
-
-
+    const [displaySound, setDisplaySound] = useState(false);
     useEffect(() => {
 
         if (running && time > 0) {
@@ -27,7 +27,6 @@ const Countdown = () => {
                 clearInterval(id);
             }
         } else if (time === 0 && running) {
-            setPlayingSound(true);
         }
 
 
@@ -58,13 +57,20 @@ const Countdown = () => {
     const pause = () => setRunning(false);
     const reset = () => {
         setTime(0);
-        setPlayingSound(false);
     };
     const setInitTime = (time) => {
         setRunning(false);
         setTime(time);
     }
-    // ?const onChangeInput = (event, name) => {
+    const handleSetSelectedSong = (song) => {
+        setDisplaySound(true);
+        setPlayingSound(false);
+        setSelectedSong(song);
+
+    }
+    const handleSetPlayingSound = (value) => {
+        setPlayingSound(value);
+    }
     return (
         <div className=" container">
             <div className="countdown-container">
@@ -122,11 +128,23 @@ const Countdown = () => {
                             </button>
                         </div>
                         <div className="sound-alert">
-                            <h5>Sounds Config</h5>
-                            <Sound
-                                sound={sound}
-                                playingSound={playingSound}
+                            <h5>
+                                Music list
+                            </h5>
+                            <MusicList
+                                musicList={musicList}
+                                handleSetSelectedSong={handleSetSelectedSong}
                             />
+                            <h5>Sounds Config</h5>
+                            {
+                                displaySound
+                                && <Sound
+                                    sound={selectedSong && selectedSong.value}
+                                    playingSound={playingSound}
+                                    handleSetPlayingSound={handleSetPlayingSound}
+                                />
+                            }
+
                         </div>
                     </div>
                 </div>

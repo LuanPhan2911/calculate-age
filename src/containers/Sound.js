@@ -11,23 +11,28 @@ const Sound = (props) => {
         volume,
         interrupt: true,
     });
-
     useEffect(() => {
         if (props.playingSound) {
-            console.log('true');
             play();
         } else {
+            console.log(1);
             stop();
         }
 
     }, [props.playingSound])
-
-
-
+    const handleStop = () => {
+        props.handleSetPlayingSound(false);
+        stop();
+    }
+    const handlePlay = () => {
+        props.handleSetPlayingSound(true);
+        play();
+    }
+    console.log(props);
     return (
         <div className='sound-container'>
-            <button onClick={() => play()}>Play</button>
-            <button onClick={() => stop()}>Stop</button>
+            <button onClick={() => handlePlay()}>Play</button>
+            <button onClick={() => handleStop()}>Stop</button>
         </div>
     );
 

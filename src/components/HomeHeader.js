@@ -8,8 +8,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { changeLanguage, changeMode } from '../features/app/AppSlice';
 import { FormattedMessage } from 'react-intl';
 import { useEffect } from 'react';
+import { logout } from '../features/user/UserSlice';
 const HomeHeader = () => {
     const mode = useSelector((state) => state.app.mode);
+    const isAuth = useSelector((state) => state.user.isAuth);
     const dispatch = useDispatch();
     useEffect(() => {
         if (mode === 'light') {
@@ -48,6 +50,9 @@ const HomeHeader = () => {
                     <Nav.Link as={Link} to={path.TODOLIST}>
                         {<FormattedMessage id='menu.todolist' />}
                     </Nav.Link>
+                    <Nav.Link as={Link} to={path.TRAFFIClIGHT}>
+                        {<FormattedMessage id='menu.traffic-light' />}
+                    </Nav.Link>
                     <Nav.Link as={Link} to={path.ABOUT}>
                         {<FormattedMessage id='menu.about' />}
                     </Nav.Link>
@@ -78,7 +83,21 @@ const HomeHeader = () => {
                         onClick={() => dispatch(changeLanguage('en'))}>
                         EN
                     </button>
+                    {
+                        isAuth ?
+                            <button
+                                className='btn btn-danger mx-3'
+                                onClick={() => dispatch(logout())}
+                            >Logout</button>
+                            :
+                            <Link to={'/login'} className={'btn btn-warning mx-3'}>Login</Link>
+
+                    }
                 </div>
+
+
+
+
             </Container>
         </Navbar>
     );

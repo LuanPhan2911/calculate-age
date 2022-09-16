@@ -3,6 +3,7 @@ export const path = {
     ABOUT: '/about',
     COUNTDOWN: '/countdown',
     TODOLIST: '/todolist',
+    TRAFFIClIGHT: '/traffic-light',
     LOGIN: '/login',
     REGISTER: '/register',
     LOGOUT: '/logout',

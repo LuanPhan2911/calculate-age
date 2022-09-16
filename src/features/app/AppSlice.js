@@ -19,4 +19,4 @@ export const AppSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { changeLanguage, changeMode } = AppSlice.actions
 
-export default AppSlice.reducer
+export default AppSlice.reducer;

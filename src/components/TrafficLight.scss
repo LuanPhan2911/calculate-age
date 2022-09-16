@@ -1,0 +1,70 @@
+.traffic-light-container {
+
+    .traffic-light-header {
+        font-size  : 35px;
+        font-weight: 600;
+    }
+
+    .traffic-light-body {
+        display        : flex;
+        flex-direction : row;
+        justify-content: space-around;
+        width          : 50%;
+
+        .traffic-light {
+            background-color: black;
+            width           : 100px;
+            height          : 300px;
+            display         : flex;
+            flex-direction  : column;
+            justify-content : space-between;
+            align-items     : center;
+            padding         : 5px 0;
+            border-radius   : 10px;
+        }
+
+        .traffic-light span {
+            width                       : 90px;
+            height                      : 90px;
+            border-radius               : 100%;
+            background-color            : gray;
+            // animation-duration: 5s;
+            // animation-iteration-count: infinite;
+            // animation-timing-function: linear;
+            /* animation                : red 5s linear infinite */
+            /* animation-fill-mode      : forwards; */
+        }
+
+
+        .red {
+            background-color: red !important;
+        }
+
+        .yellow {
+            background-color: yellow !important;
+        }
+
+        .green {
+            background-color: green !important;
+        }
+
+        .gray {
+            background-color: gray !important;
+        }
+
+        .countdown {
+            font-family   : 'Share Tech Mono', monospace;
+            text-align    : center;
+            color         : #daf6ff;
+            text-shadow   : 0 0 20px rgb(24, 58, 229), 0 0 20px rgba(10, 175, 230, 0);
+            letter-spacing: 0.05em;
+            font-size     : 80px;
+            padding       : 5px 0;
+        }
+
+
+
+    }
+
+    .traffic-light-footer {}
+}

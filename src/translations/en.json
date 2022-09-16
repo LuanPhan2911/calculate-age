@@ -4,6 +4,7 @@
         "countdown": "Countdown",
         "about": "About",
         "todolist": "TodoList",
+        "traffic-light": "Traffic Light",
         "welcome": " Welcome to Calculator Age",
         "select-age": "Choose your birth date"
     },
@@ -42,5 +43,25 @@
             "remember": "Remember me",
             "member": "Have an account? "
         }
+    },
+    "validate": {
+        "email": {
+            "require": "Email must be required!",
+            "is-email": "Email is not valid!"
+        },
+        "password": {
+            "require": "Password must be required!",
+            "min-length": "Min length is 5 character!"
+        },
+        "name": {
+            "require": "Name must be required!"
+        }
+    },
+    "traffic-light": {
+        "header": "Welcome to Traffic Light"
+    },
+    "music": {
+        "nu_cuoi_em_la_nang": "Nu cuoi em la nang",
+        "de_vuong": "De vuong"
     }
 }

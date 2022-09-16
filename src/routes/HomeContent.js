@@ -4,6 +4,8 @@ import About from '../components/About';
 import Countdown from '../components/Coundown';
 import './HomeContent.scss';
 import TodoList from '../components/TodoList';
+import UserIsAuth from '../hoc/UserIsAuth';
+import TrafficLight from '../components/TrafficLight';
 
 const HomeContent = () => {
     return (
@@ -11,8 +13,11 @@ const HomeContent = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/countdown" element={<Countdown />} />
-                <Route path="/todolist" element={<TodoList />} />
+                <Route path="/todolist" element={
+                    <UserIsAuth> <TodoList /></UserIsAuth>
+                } />
                 <Route path="about" element={<About />} />
+                <Route path="traffic-light" element={<TrafficLight />} />
             </Routes>
         </div>
 

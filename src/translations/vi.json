@@ -3,6 +3,7 @@
         "home": "Nhà",
         "countdown": "Đếm ngược",
         "todolist": "Danh sách việc",
+        "traffic-light": "Đèn giao thông",
         "about": "Về chúng tôi",
         "welcome": "Chào mừng đến với công cụ tính toán tuổi",
         "select-age": "Chọn ngày sinh của bạn"
@@ -42,5 +43,25 @@
             "remember": "Nhớ tài khoản",
             "member": "Có tài khoản? "
         }
+    },
+    "validate": {
+        "email": {
+            "require": "Email bắt buộc phải điền!",
+            "is-email": "Email không hợp lệ"
+        },
+        "password": {
+            "require": "Mật khẩu bắt buộc phải điền",
+            "min-length": "Độ dài tối thiểu là 5 kí tự!"
+        },
+        "name": {
+            "require": "Tên bắt buộc phải điền!"
+        }
+    },
+    "traffic-light": {
+        "header": "Chào mừng đến với đèn giao thông"
+    },
+    "music": {
+        "nu_cuoi_em_la_nang": "Nụ cười em là nắng",
+        "de_vuong": "Đế vương"
     }
 }
