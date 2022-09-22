@@ -1,6 +1,5 @@
 import messages_vi from '../translations/vi.json';
 import messages_en from '../translations/en.json';
-import { useIntl } from "react-intl";
 
 const flattenMessages = ((nestedMessages, prefix = '') => {
     if (nestedMessages == null) {
@@ -34,11 +33,6 @@ export default class LanguageUtils {
         return messages;
     }
 }
-export const GetTranslateText = (textId) => {
-    const intl = useIntl();
-    const plainText = intl.formatMessage({ id: textId });
 
-    return plainText;
-};
 
 

@@ -110,7 +110,6 @@ const Login = (props) => {
                 }
                 if (status === 400) {
                     let { errors } = data;
-                    console.log(errors);
                     for (const key in errors) {
                         if (Object.hasOwnProperty.call(errors, key)) {
                             errors[key].forEach((item) => {

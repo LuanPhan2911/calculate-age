@@ -1,0 +1,27 @@
+.todolist-container {
+    .todolist-header {
+        font-size  : 35px;
+        font-weight: 600;
+    }
+
+    .todolist-body {
+        .add-todo-title {}
+
+        .add-todo-description {}
+
+        .todolist-content {
+            .todolist-title {
+                font-size  : 14px;
+                font-weight: 600;
+            }
+
+            .todolist-description {
+                font-size: 12px;
+            }
+        }
+
+        .todolist-update {}
+    }
+
+    .todolist-footer {}
+}

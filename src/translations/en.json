@@ -63,5 +63,8 @@
     "music": {
         "nu_cuoi_em_la_nang": "Nu cuoi em la nang",
         "de_vuong": "De vuong"
+    },
+    "todo": {
+        "error": "Title and description must be required!"
     }
 }

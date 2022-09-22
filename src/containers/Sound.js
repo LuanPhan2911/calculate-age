@@ -15,7 +15,6 @@ const Sound = (props) => {
         if (props.playingSound) {
             play();
         } else {
-            console.log(1);
             stop();
         }
 
@@ -28,7 +27,6 @@ const Sound = (props) => {
         props.handleSetPlayingSound(true);
         play();
     }
-    console.log(props);
     return (
         <div className='sound-container'>
             <button onClick={() => handlePlay()}>Play</button>

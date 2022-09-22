@@ -63,5 +63,8 @@
     "music": {
         "nu_cuoi_em_la_nang": "Nụ cười em là nắng",
         "de_vuong": "Đế vương"
+    },
+    "todo": {
+        "error": "Tiêu đề và nội dung không được để trống!"
     }
 }
