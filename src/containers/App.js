@@ -1,6 +1,6 @@
 
 
-import HomeHeader from '../components/HomeHeader';
+import HomeHeader from '../components/Home/HomeHeader';
 import HomeContent from '../routes/HomeContent';
 import '../assets/theme/dark.scss';
 import '../assets/theme/light.scss';

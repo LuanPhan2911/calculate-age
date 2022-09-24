@@ -3,12 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import { path } from '../utils';
+import { path } from '../../utils';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeLanguage, changeMode } from '../features/app/AppSlice';
+import { changeLanguage, changeMode } from '../../features/app/AppSlice';
 import { FormattedMessage } from 'react-intl';
 import { useEffect } from 'react';
-import { logout } from '../features/user/UserSlice';
+import { logout } from '../../features/user/UserSlice';
 const HomeHeader = () => {
     const mode = useSelector((state) => state.app.mode);
     const isAuth = useSelector((state) => state.user.isAuth);
@@ -52,6 +52,9 @@ const HomeHeader = () => {
                     </Nav.Link>
                     <Nav.Link as={Link} to={path.TRAFFIClIGHT}>
                         {<FormattedMessage id='menu.traffic-light' />}
+                    </Nav.Link>
+                    <Nav.Link as={Link} to={path.POST}>
+                        {<FormattedMessage id='menu.post' />}
                     </Nav.Link>
                     <Nav.Link as={Link} to={path.ABOUT}>
                         {<FormattedMessage id='menu.about' />}

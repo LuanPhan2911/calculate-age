@@ -1,0 +1,40 @@
+.comment-container {
+    display       : flex;
+    flex-direction: row;
+    min-height    : 100px;
+    border        : 1px solid black;
+
+    .comment-header {
+        width: 10%;
+
+        .user-comment {
+
+            .avatar {
+                width : 50px;
+                height: 50px;
+            }
+
+            .user-name {
+                color: gold;
+            }
+        }
+    }
+
+    .comment-body {
+        width: 90%;
+
+        display       : flex;
+        flex-direction: column;
+
+        .comment-content {
+            .comment-message {
+                border    : 1px solid red;
+                min-height: 100px;
+            }
+
+            .comment-config {}
+        }
+    }
+
+    .comment-footer {}
+}

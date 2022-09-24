@@ -1,0 +1,48 @@
+.post-detail-container {
+    .post-detail-header {}
+
+    .post-detail-body {
+        .post-detail-title {
+            font-size  : 20px;
+            font-weight: 600;
+
+            &:hover {
+                color: red;
+            }
+        }
+
+        .detail-author-post {
+            display        : flex;
+            flex-direction : row;
+            justify-content: space-between;
+
+            .user-info {
+                .user-name {
+                    color: green;
+                }
+
+                .user-email {
+                    color     : blue;
+                    font-style: italic;
+                    opacity   : 0.7;
+                    font-size : 17px;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .created-at {
+                color: red;
+            }
+        }
+
+        .post-detail-content {
+            min-height: 400px;
+            border    : 1px solid black;
+        }
+    }
+
+    .post-detail-footer {}
+}

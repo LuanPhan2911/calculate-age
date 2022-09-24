@@ -1,9 +1,9 @@
 import { FormattedMessage } from "react-intl";
 import './Countdown.scss';
 import { useState, useEffect } from "react";
-import musicList from '../assets/sound';
-import Sound from "../containers/Sound";
-import MusicList from "./Sound/MusicList";
+import musicList from '../../assets/sound';
+import Sound from "../../containers/Sound";
+import MusicList from "../Sound/MusicList";
 const Countdown = () => {
     //countdown 
     const [time, setTime] = useState(0);

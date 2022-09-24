@@ -6,7 +6,11 @@
         "traffic-light": "Đèn giao thông",
         "about": "Về chúng tôi",
         "welcome": "Chào mừng đến với công cụ tính toán tuổi",
-        "select-age": "Chọn ngày sinh của bạn"
+        "select-age": "Chọn ngày sinh của bạn",
+        "todo": {
+            "history": "Lịch sử"
+        },
+        "post": "Bài đăng"
     },
     "calculator-age": {
         "content": "Bạn đã sống khoảng ",
@@ -65,6 +69,16 @@
         "de_vuong": "Đế vương"
     },
     "todo": {
-        "error": "Tiêu đề và nội dung không được để trống!"
+        "error": "Tiêu đề và nội dung không được để trống!",
+        "title": "Tiêu đề",
+        "description": "Mô tả",
+        "save": "Lưu",
+        "stop": "Dừng chỉnh sửa",
+        "find-todo": "Todo đã xóa",
+        "created-at": "Được tạo vào",
+        "config": "Hiệu chỉnh",
+        "edit": "Chỉnh sửa",
+        "delete": "Xóa",
+        "empty": "Không có việc gì đề làm hết!"
     }
 }

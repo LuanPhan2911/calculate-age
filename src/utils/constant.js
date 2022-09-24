@@ -7,6 +7,8 @@ export const path = {
     LOGIN: '/login',
     REGISTER: '/register',
     LOGOUT: '/logout',
+    TODOLIST_HISTORY: '/todolist/history',
+    POST: '/post',
 }
 export const menu = {
     HOME: 'Home',
@@ -24,4 +26,8 @@ export const dateFormat = {
 export const fake = {
     "email": "luan@gmail.com",
     "name": "luan"
+}
+export const TIME_FORMAT = {
+    EN: 'MM/DD/yyyy - hh:mm:ss',
+    VI: 'DD/MM/yyyy - hh:mm:ss',
 }

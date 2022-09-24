@@ -6,7 +6,11 @@
         "todolist": "TodoList",
         "traffic-light": "Traffic Light",
         "welcome": " Welcome to Calculator Age",
-        "select-age": "Choose your birth date"
+        "select-age": "Choose your birth date",
+        "todo": {
+            "history": "History"
+        },
+        "post": "Post"
     },
     "calculator-age": {
         "content": "You live about ",
@@ -65,6 +69,16 @@
         "de_vuong": "De vuong"
     },
     "todo": {
-        "error": "Title and description must be required!"
+        "error": "Title and description must be required!",
+        "title": "Title",
+        "description": "Description",
+        "save": "Save",
+        "stop": "Stop Edit",
+        "find-todo": "Find Todo was deleted",
+        "created-at": "Created at",
+        "config": "Config",
+        "edit": "Edit",
+        "delete": "Delete",
+        "empty": "Nothing to do!"
     }
 }
