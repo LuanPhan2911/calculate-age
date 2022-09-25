@@ -1,9 +1,17 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { handleAddCommentService, handleAddReplyCommentService } from "../../services/commentServices";
+
 import './CommentForm.scss';
-const CommentForm = ({ post_id, parent_id }) => {
+const CommentForm = ({
+    post_id,
+    parent_id,
+    handleAddCommentService,
+    handleAddReplyCommentService,
+
+    setIsReplying,
+    fetchData
+}) => {
 
     let user_id = useSelector((state) => state.user.id);
     const initComment = {
@@ -40,7 +48,8 @@ const CommentForm = ({ post_id, parent_id }) => {
                     setComment({
                         ...initComment
                     });
-                    console.log(res.data);
+                    toast.success('Add comment success!');
+                    fetchData();
                 }
             } else {
                 let res = await handleAddReplyCommentService({
@@ -53,7 +62,11 @@ const CommentForm = ({ post_id, parent_id }) => {
                     setComment({
                         ...initComment
                     });
-                    console.log(res.data);
+                    toast.success('Add comment success!');
+                    setIsReplying(false);
+
+                    fetchData();
+
                 }
             }
 
@@ -77,7 +90,7 @@ const CommentForm = ({ post_id, parent_id }) => {
     }
 
     return (
-        <div className="comment-form-container">
+        <div div className="comment-form-container" >
             <div className="comment-form-header">
             </div>
             <div className="comment-form-body">
@@ -98,5 +111,6 @@ const CommentForm = ({ post_id, parent_id }) => {
             </div>
         </div>
     )
+
 }
 export default CommentForm;

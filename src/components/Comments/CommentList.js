@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
-import { handleGetCommentService } from "../../services/commentServices";
+
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 import './CommentList.scss';
-const CommentList = ({ post_id }) => {
+const CommentList = ({
+    post_id,
+    handleGetCommentService,
+    handleAddCommentService,
+    handleAddReplyCommentService,
+}) => {
     const [commentList, setCommentList] = useState([]);
     const fetchData = async () => {
         try {
@@ -39,7 +44,13 @@ const CommentList = ({ post_id }) => {
                 <h3>Comment</h3>
             </div>
             <div className="comment-list-body">
-                <CommentForm post_id={post_id} />
+                <CommentForm
+                    post_id={post_id}
+                    handleAddCommentService={handleAddCommentService}
+                    handleAddReplyCommentService={handleAddReplyCommentService}
+                    //not do that fetch all data
+                    fetchData={fetchData}
+                />
                 {
                     commentList && commentList.length > 0
                     && commentList.map((item) => {
@@ -47,6 +58,10 @@ const CommentList = ({ post_id }) => {
                             comment={item}
                             key={item.id}
                             post_id={post_id}
+                            handleAddCommentService={handleAddCommentService}
+                            handleAddReplyCommentService={handleAddReplyCommentService}
+
+                            fetchData={fetchData}
                         />)
                     })
                 }

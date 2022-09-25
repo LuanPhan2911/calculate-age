@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { handleShowPostService } from "../../services/postServices";
+import { handleGetPostService, handleShowPostService } from "../../services/postServices";
 import './PostDetail.scss';
 import { FaUserAlt } from 'react-icons/fa';
 import CommentList from "../Comments/CommentList";
+import { handleGetCommentService } from "../../services/commentServices";
+import { handleAddCommentService, handleAddReplyCommentService } from "../../services/commentServices";
 const PostDetail = (props) => {
     const params = useParams();
     const [postDetail, setPostDetail] = useState({});
@@ -16,14 +18,14 @@ const PostDetail = (props) => {
             if (res && res.success) {
                 setPostDetail(res.data);
             }
+
+
         } catch (error) {
             console.log(error);
         }
     }
     useEffect(() => {
-        if (post_id) {
-            fetchData(post_id);
-        }
+        fetchData(post_id);
     }, [post_id]);
     return (
         <div className="post-detail-container">
@@ -51,7 +53,12 @@ const PostDetail = (props) => {
                 </div>
             </div>
             <div className="post-detail-footer">
-                <CommentList post_id={post_id} />
+                <CommentList
+                    post_id={post_id}
+                    handleGetCommentService={handleGetCommentService}
+                    handleAddCommentService={handleAddCommentService}
+                    handleAddReplyCommentService={handleAddReplyCommentService}
+                />
             </div>
         </div>
     )
