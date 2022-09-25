@@ -6,11 +6,11 @@ import './CommentForm.scss';
 const CommentForm = ({
     post_id,
     parent_id,
-    handleAddCommentService,
-    handleAddReplyCommentService,
+    handleAddPostCommentService,
+    handleAddPostReplyCommentService,
 
     setIsReplying,
-    fetchData
+    fetchData,
 }) => {
 
     let user_id = useSelector((state) => state.user.id);
@@ -39,7 +39,7 @@ const CommentForm = ({
         }
         try {
             if (!parent_id) {
-                let res = await handleAddCommentService({
+                let res = await handleAddPostCommentService({
                     message,
                     user_id,
                     post_id,
@@ -52,7 +52,7 @@ const CommentForm = ({
                     fetchData();
                 }
             } else {
-                let res = await handleAddReplyCommentService({
+                let res = await handleAddPostReplyCommentService({
                     message,
                     user_id,
                     post_id,

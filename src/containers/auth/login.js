@@ -2,7 +2,7 @@
 import './login.scss';
 import { FormattedMessage } from 'react-intl';
 import { fake } from '../../utils/constant';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import validator from 'validator';
 import { handleUserLogin } from '../../services/userServices';
@@ -16,6 +16,7 @@ const Login = (props) => {
         email: '',
         password: '',
     });
+    const navigate = useNavigate();
     const [error, setError] = useState({
         email: {
             required: false,
@@ -100,6 +101,7 @@ const Login = (props) => {
                 if (res && res.success) {
                     dispatch(login(res.data));
                     toast.success(res.message);
+                    navigate(-1);
                 }
             } catch (error) {
                 let { status, data } = error.response;

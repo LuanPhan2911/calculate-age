@@ -28,6 +28,6 @@ export const fake = {
     "name": "luan"
 }
 export const TIME_FORMAT = {
-    EN: 'MM/DD/yyyy - hh:mm:ss',
-    VI: 'DD/MM/yyyy - hh:mm:ss',
+    EN: 'MM/DD/yyyy - hh:mm:ss A',
+    VI: 'DD/MM/yyyy - hh:mm:ss A',
 }

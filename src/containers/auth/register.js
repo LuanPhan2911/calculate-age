@@ -8,6 +8,7 @@ import validator from 'validator';
 import { handleUserRegister } from '../../services/userServices';
 import { register } from '../../features/user/UserSlice';
 import { toast } from 'react-toastify';
+import { useNavigate, } from 'react-router-dom';
 const Register = (props) => {
     const language = useSelector((state) => state.app.language);
     const dispatch = useDispatch();
@@ -17,6 +18,7 @@ const Register = (props) => {
         password: '',
 
     });
+    const navigate = useNavigate();
     const [error, setError] = useState({
         name: {
             required: false,
@@ -191,6 +193,7 @@ const Register = (props) => {
                 if (res && res.success) {
                     dispatch(register(res.data));
                     toast.success(res.message);
+                    navigate(-1);
                 }
             } catch (error) {
                 let { status, data } = error.response;

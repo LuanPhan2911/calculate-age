@@ -1,7 +1,18 @@
 .post-container {
     .post-header {}
 
-    .post-body {}
+    .post-body {
+        .arrow-filter {
+            cursor : pointer;
+            opacity: 0.8;
+            color  : blue;
+
+            &:hover {
+                color  : red;
+                opacity: 1;
+            }
+        }
+    }
 
     .post-footer {}
 }

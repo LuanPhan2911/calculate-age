@@ -6,14 +6,14 @@ import CommentForm from "./CommentForm";
 import './CommentList.scss';
 const CommentList = ({
     post_id,
-    handleGetCommentService,
-    handleAddCommentService,
-    handleAddReplyCommentService,
+    handleGetPostCommentService,
+    handleAddPostCommentService,
+    handleAddPostReplyCommentService,
 }) => {
     const [commentList, setCommentList] = useState([]);
     const fetchData = async () => {
         try {
-            let res = await handleGetCommentService({
+            let res = await handleGetPostCommentService({
                 post_id: post_id,
             });
             if (res && res.success) {
@@ -46,8 +46,8 @@ const CommentList = ({
             <div className="comment-list-body">
                 <CommentForm
                     post_id={post_id}
-                    handleAddCommentService={handleAddCommentService}
-                    handleAddReplyCommentService={handleAddReplyCommentService}
+                    handleAddPostCommentService={handleAddPostCommentService}
+                    handleAddPostReplyCommentService={handleAddPostReplyCommentService}
                     //not do that fetch all data
                     fetchData={fetchData}
                 />
@@ -58,8 +58,8 @@ const CommentList = ({
                             comment={item}
                             key={item.id}
                             post_id={post_id}
-                            handleAddCommentService={handleAddCommentService}
-                            handleAddReplyCommentService={handleAddReplyCommentService}
+                            handleAddPostCommentService={handleAddPostCommentService}
+                            handleAddPostReplyCommentService={handleAddPostReplyCommentService}
 
                             fetchData={fetchData}
                         />)

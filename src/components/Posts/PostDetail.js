@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { handleGetPostService, handleShowPostService } from "../../services/postServices";
 import './PostDetail.scss';
 import { FaUserAlt } from 'react-icons/fa';
 import CommentList from "../Comments/CommentList";
-import { handleGetCommentService } from "../../services/commentServices";
-import { handleAddCommentService, handleAddReplyCommentService } from "../../services/commentServices";
+import { handleGetPostCommentService } from "../../services/commentServices";
+import { handleAddPostCommentService, handleAddPostReplyCommentService } from "../../services/commentServices";
 const PostDetail = (props) => {
     const params = useParams();
     const [postDetail, setPostDetail] = useState({});
+    const [authorPost, setAuthorPost] = useState({});
     let { post_id } = params;
     const fetchData = async (post_id) => {
         try {
@@ -17,6 +18,7 @@ const PostDetail = (props) => {
             });
             if (res && res.success) {
                 setPostDetail(res.data);
+                setAuthorPost(res.data.user);
             }
 
 
@@ -30,34 +32,37 @@ const PostDetail = (props) => {
     return (
         <div className="post-detail-container">
             <div className="post-detail-header">
+                <Link to={'/post'} className={'btn btn-primary'}>Back</Link>
                 <h4>Post show</h4>
             </div>
             <div className="post-detail-body">
                 <div className="post-detail-title">
-                    TP.HCM: Cháy tại một công ty ở Thủ Đức, công nhân chạy thoát thân
+                    {postDetail.title}
                 </div>
                 <div className="detail-author-post">
                     <div className="user-info">
-                        <div className="user-name">Tran Duy Kanh</div>
-                        <div className="user-email">Khanh@gmail.com</div>
+                        <div className="user-name">
+                            {authorPost.name}
+                        </div>
+                        <div className="user-email">
+                            {authorPost.email}
+                        </div>
                     </div>
                     <div className="created-at">
-                        29-11-2003 - 12:20:21
+                        {postDetail.created_at}
                     </div>
 
                 </div>
                 <div className="post-detail-content">
-                    Nhận tin báo, Đội Cảnh sát PCCC và CNCH phối hợp các đơn vị liên quan, nhanh chóng có mặt, tổ chức phương án cứu hộ cứu nạn, lấy lời khai những người liên quan để làm rõ nguyên nhân vụ việc.
-
-                    Thời điểm xảy ra vụ cháy, trời mưa to và đám cháy nhanh chóng được dập tắt.
+                    {postDetail.body}
                 </div>
             </div>
             <div className="post-detail-footer">
                 <CommentList
                     post_id={post_id}
-                    handleGetCommentService={handleGetCommentService}
-                    handleAddCommentService={handleAddCommentService}
-                    handleAddReplyCommentService={handleAddReplyCommentService}
+                    handleGetPostCommentService={handleGetPostCommentService}
+                    handleAddPostCommentService={handleAddPostCommentService}
+                    handleAddPostReplyCommentService={handleAddPostReplyCommentService}
                 />
             </div>
         </div>

@@ -9,6 +9,7 @@ import TodoList from '../components/TodoList/TodoList';
 import TodoListHistory from '../components/TodoList/TodoListHistory';
 import Post from '../components/Posts/Post';
 import PostDetail from '../components/Posts/PostDetail';
+import PostForm from '../components/Posts/PostForm';
 
 const HomeContent = () => {
     return (
@@ -24,6 +25,9 @@ const HomeContent = () => {
                 } />
                 <Route path="/post" element={
                     <UserIsAuth> <Post /></UserIsAuth>
+                } />
+                <Route path="/post/store" element={
+                    <UserIsAuth> <PostForm /></UserIsAuth>
                 } />
                 <Route path="/post/:post_id" element={
                     <UserIsAuth> <PostDetail /></UserIsAuth>

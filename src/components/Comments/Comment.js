@@ -4,8 +4,8 @@ import CommentForm from "./CommentForm";
 const Comment = ({
     comment,
     post_id,
-    handleAddCommentService,
-    handleAddReplyCommentService,
+    handleAddPostCommentService,
+    handleAddPostReplyCommentService,
 
     fetchData,
 }) => {
@@ -60,8 +60,8 @@ const Comment = ({
 
                                 post_id={post_id}
                                 parent_id={comment.id}
-                                handleAddCommentService={handleAddCommentService}
-                                handleAddReplyCommentService={handleAddReplyCommentService}
+                                handleAddPostCommentService={handleAddPostCommentService}
+                                handleAddPostReplyCommentService={handleAddPostReplyCommentService}
 
                                 fetchData={fetchData}
                             />
@@ -79,8 +79,8 @@ const Comment = ({
                                             comment={item}
                                             key={item.id}
                                             post_id={post_id}
-                                            handleAddCommentService={handleAddCommentService}
-                                            handleAddReplyCommentService={handleAddReplyCommentService}
+                                            handleAddPostCommentService={handleAddPostCommentService}
+                                            handleAddPostReplyCommentService={handleAddPostReplyCommentService}
 
                                             fetchData={fetchData}
                                         />
