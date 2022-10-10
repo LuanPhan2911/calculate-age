@@ -48,7 +48,6 @@ const Post = (props) => {
     return posts;
   };
   const handleFilterPost = (posts) => {
-    console.log(1);
     let data = handleFilterCategoryInPost(posts);
     data = handleSearchByNamePost(data);
     data = handleFilterPostByCreatedAt(data);

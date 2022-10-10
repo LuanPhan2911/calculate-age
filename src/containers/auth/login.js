@@ -5,10 +5,11 @@ import { fake } from '../../utils/constant';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import validator from 'validator';
-import { handleUserLogin } from '../../services/userServices';
+import { handleUserLogin, handleVerifyToken } from '../../services/userServices';
 import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../../features/user/UserSlice';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 const Login = (props) => {
     const language = useSelector((state) => state.app.language);
     const dispatch = useDispatch();
@@ -97,12 +98,18 @@ const Login = (props) => {
         setReadyValidate(true);
         if (validateSucceed) {
             try {
-                let res = await handleUserLogin({ ...user, language })
-                if (res && res.success) {
-                    dispatch(login(res.data));
-                    toast.success(res.message);
-                    navigate(-1);
-                }
+              
+                // await handleVerifyToken()
+                let res = await handleUserLogin({ ...user, language });
+                    if (res && res.success) {
+                        dispatch(login(res.data));
+                        toast.success(res.message);
+                        navigate(-1);
+                    }
+                 
+                    
+              
+               
             } catch (error) {
                 let { status, data } = error.response;
 

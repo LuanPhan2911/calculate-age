@@ -1,7 +1,7 @@
 import axios from 'axios';
 const instance = axios.create({
-    baseURL: process.env.REACT_APP_BACKEND_URL,
-    withCredentials: true,
+    baseURL: 'http://relationship.test/api/',
+    // withCredentials: true,
 });
 // axios.defaults.withCredentials = true;
 instance.interceptors.response.use(

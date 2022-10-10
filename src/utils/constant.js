@@ -9,6 +9,7 @@ export const path = {
     LOGOUT: '/logout',
     TODOLIST_HISTORY: '/todolist/history',
     POST: '/post',
+    STUDENT:'/student',
 }
 export const menu = {
     HOME: 'Home',

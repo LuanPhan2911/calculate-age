@@ -10,7 +10,8 @@
         "todo": {
             "history": "History"
         },
-        "post": "Post"
+        "post": "Post",
+        "student": "Student"
     },
     "calculator-age": {
         "content": "You live about ",

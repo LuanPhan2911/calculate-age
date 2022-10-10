@@ -10,6 +10,7 @@ import TodoListHistory from '../components/TodoList/TodoListHistory';
 import Post from '../components/Posts/Post';
 import PostDetail from '../components/Posts/PostDetail';
 import PostForm from '../components/Posts/PostForm';
+import Student from '../components/Student/Student';
 
 const HomeContent = () => {
     return (
@@ -31,6 +32,9 @@ const HomeContent = () => {
                 } />
                 <Route path="/post/:post_id" element={
                     <UserIsAuth> <PostDetail /></UserIsAuth>
+                } />
+                <Route path="/student" element={
+                    <UserIsAuth> <Student /></UserIsAuth>
                 } />
                 <Route path="about" element={<About />} />
                 <Route path="traffic-light" element={<TrafficLight />} />

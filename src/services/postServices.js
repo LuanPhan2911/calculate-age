@@ -2,7 +2,8 @@ import axios from "../axios";
 const handleGetPostService = () => {
     return axios.get('/api/post');
 }
-const handleAddPostService = (data) => {
+const handleAddPostService = async(data) => {
+    
     return axios.post('/api/post/store', data);
 }
 const handleShowPostService = (data) => {
