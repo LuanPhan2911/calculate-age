@@ -10,6 +10,7 @@ export const path = {
     TODOLIST_HISTORY: '/todolist/history',
     POST: '/post',
     STUDENT:'/student',
+    CALCULATOR:'/calculator'
 }
 export const menu = {
     HOME: 'Home',

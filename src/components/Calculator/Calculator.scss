@@ -1,0 +1,80 @@
+.calculator-container {
+    .calculator-header {}
+
+    .calculator-body {
+        display        : flex;
+        flex-direction : column;
+        justify-content: center;
+
+        .display {
+            height        : 70px;
+            width         : calc(50% - 10px);
+            margin-left   : 10px;
+            border        : 1px solid black;
+            padding       : 0 10px;
+            border-radius : 5px;
+            display       : flex;
+            flex-direction: column;
+            align-items   : flex-end;
+
+            &.focus {
+                border: 1px solid red;
+            }
+
+            .answer {
+                height: 40%;
+                float : right;
+
+                span {
+                    font-size: 15px;
+                }
+            }
+
+            .result {
+                height: 60%;
+                float : right;
+
+
+                // input {
+                //     border          : none;
+                //     border-top      : 1px solid black;
+                //     border-bottom   : 1px solid black;
+                //     outline         : none;
+                //     background-color: transparent;
+                //     width           : 100%;
+                //     float           : right;
+                //     clear           : both;
+                //     text-align      : right;
+                // }
+            }
+
+            .input-calculator {
+                width: 100%;
+
+            }
+        }
+
+        .keys {
+            width            : 50%;
+            display          : flex;
+            flex-direction   : row;
+            flex-wrap        : wrap;
+            // margin-top    : 10px;
+
+            .key {
+                width        : calc(25% - 10px);
+                margin-left  : 10px;
+                margin-top   : 10px;
+                border-radius: 5px;
+                opacity      : 0.9;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+
+    .calculator-footer {}
+}

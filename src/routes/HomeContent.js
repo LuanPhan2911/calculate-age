@@ -11,6 +11,7 @@ import Post from '../components/Posts/Post';
 import PostDetail from '../components/Posts/PostDetail';
 import PostForm from '../components/Posts/PostForm';
 import Student from '../components/Student/Student';
+import Calculator from '../components/Calculator/Calculator';
 
 const HomeContent = () => {
     return (
@@ -37,6 +38,7 @@ const HomeContent = () => {
                     <UserIsAuth> <Student /></UserIsAuth>
                 } />
                 <Route path="about" element={<About />} />
+                <Route path="calculator" element={<Calculator />} />
                 <Route path="traffic-light" element={<TrafficLight />} />
             </Routes>
         </div>

@@ -11,7 +11,8 @@
             "history": "History"
         },
         "post": "Post",
-        "student": "Student"
+        "student": "Student",
+        "calculator": "Calculator"
     },
     "calculator-age": {
         "content": "You live about ",
