@@ -12,7 +12,6 @@ const keys =[
 const Calculator = (props) => {
     const [infix, setInfix]= useState('');
     const [answer, setAnswer]= useState('');
-    const [result, setResult]= useState('');
     const [isFocus, setIsFocus]= useState(false);
   const handleSetPosFix =(item)=>{
     switch(item){

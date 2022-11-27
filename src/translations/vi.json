@@ -12,7 +12,8 @@
         },
         "post": "Bài đăng",
         "student": "Học sinh",
-        "calculator": "Máy tính"
+        "calculator": "Máy tính",
+        "weather": "Thời tiết"
     },
     "calculator-age": {
         "content": "Bạn đã sống khoảng ",

@@ -12,7 +12,8 @@
         },
         "post": "Post",
         "student": "Student",
-        "calculator": "Calculator"
+        "calculator": "Calculator",
+        "weather": "Weather"
     },
     "calculator-age": {
         "content": "You live about ",

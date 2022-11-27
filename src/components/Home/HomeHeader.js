@@ -62,6 +62,9 @@ const HomeHeader = () => {
                     <Nav.Link as={Link} to={path.CALCULATOR}>
                         {<FormattedMessage id='menu.calculator' />}
                     </Nav.Link>
+                    <Nav.Link as={Link} to={path.WEATHER}>
+                        {<FormattedMessage id='menu.weather' />}
+                    </Nav.Link>
                     <Nav.Link as={Link} to={path.ABOUT}>
                         {<FormattedMessage id='menu.about' />}
                     </Nav.Link>

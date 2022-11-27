@@ -12,6 +12,7 @@ import PostDetail from '../components/Posts/PostDetail';
 import PostForm from '../components/Posts/PostForm';
 import Student from '../components/Student/Student';
 import Calculator from '../components/Calculator/Calculator';
+import Weather from '../components/Weather/Weather';
 
 const HomeContent = () => {
     return (
@@ -40,6 +41,7 @@ const HomeContent = () => {
                 <Route path="about" element={<About />} />
                 <Route path="calculator" element={<Calculator />} />
                 <Route path="traffic-light" element={<TrafficLight />} />
+                <Route path="weather" element={<Weather />} />
             </Routes>
         </div>
 
